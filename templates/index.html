@@ -1,0 +1,91 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>ZenZone</title>
+
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bulma@1.0.0/css/bulma.min.css">
+    <link href="//maxcdn.bootstrapcdn.com/font-awesome/4.7.0/css/font-awesome.min.css" rel="stylesheet" />
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.4.1/jquery.min.js"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/jquery-cookie/1.4.1/jquery.cookie.js"></script>
+    <script src="https://kit.fontawesome.com/a64d91fe20.js" crossorigin="anonymous"></script>
+    <script src="{{ url_for('static', filename='script.js') }}"></script>
+
+    <script>
+        $(document).ready(function() {
+            get_posts()
+          })
+    </script>
+
+</head>
+
+<body>
+    <nav class="navbar is-fixed-top is-body" role="navigation" aria-label="main navigation">
+        <div class="navbar-brand">
+            <a class="navbar-item" href="/">
+                <strong class="title is-size-3">ZenZone</strong>
+            </a>
+        </div>
+    </nav>
+
+    <section class="section">
+        <div class="is-flex is-justify-content-center">
+            <figure class="media-left" style="align-self: center">
+                <a class="image is-32x32" href="/user/{{user_info.username}}">
+                    <img class="is-rounded" src="{{ url_for('static', filename=user_info.profile_pic_real) }}">
+                </a>
+            </figure>
+            <input class="input is-rounded ml-4 my-5 has-background-dark" type="text"
+                placeholder="What are you thinking about?" style="max-width: 600px;" id="post" />
+        </div>
+    </section>
+
+    <section class="section is-hidden" id="modal-post"
+        style="position: fixed; top: 50%; left: 50%; transform: translate(-50%, -50%);  padding: 20px; z-index: 101;">
+        <div class="is-flex is-justify-content-center">
+            <div class="box">
+                <div class="fixed-grid has-4-cols">
+                    <div class="grid">
+                        <h1
+                            class="cell is-col-span-2 is-col-start-2 has-text-centered is-size-4 has-text-weight-semibold">
+                            Make a Post</h1>
+                        <div class="cell is-flex is-justify-content-flex-end">
+                            <button class="delete is-large" id="xmark"></button>
+                        </div>
+                    </div>
+                </div>
+                <hr>
+                <figure style="align-self: center" class="mb-4 is-flex">
+                    <a class="image is-32x32">
+                        <img class="is-rounded" src="../static/profile_pics/profile_placeholder.jpg">
+                    </a>
+                    <h2 class="is-size-5 has-text-weight-semibold ml-4">{{user_info['username']}}</h2>
+                </figure>
+                <div class="is-flex is-justify-content-center" id="modal-post">
+                    <textarea class="textarea has-background-dark" placeholder="What are you thinking about?"
+                        style="width: 600px;" id="text-input"></textarea>
+                </div>
+                <p id="help-posting" class="help"></p>
+                <button class="button is-light mt-5 is-fullwidth" id="posting">Post</button>
+            </div>
+        </div>
+    </section>
+    <div id="overlay"
+        style="display: none; position: fixed; top: 0; left: 0; width: 100%; height: 100%; background-color: rgba(0, 0, 0, 0.2); z-index: 1;">
+    </div>
+
+<section id="box-post">
+    
+    
+</section>
+    
+
+
+
+
+
+</body>
+
+</html>

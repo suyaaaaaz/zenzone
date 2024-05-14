@@ -1,0 +1,64 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>ZenZone</title>
+
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bulma@1.0.0/css/bulma.min.css">
+    <link href="//maxcdn.bootstrapcdn.com/font-awesome/4.7.0/css/font-awesome.min.css" rel="stylesheet" />
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.4.1/jquery.min.js"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/jquery-cookie/1.4.1/jquery.cookie.js"></script>
+    <script src="../static/script.js"></script>
+
+</head>
+
+<body>
+    <section class="hero">
+        <div class="hero-body has-text-centered">
+            <p class="title is-size-1"> ZenZone</p>
+            <p class="subtitle">invite people you trust to go into your own zone</p>
+        </div>
+    </section>
+
+    <section class="section container has-text-centered" style="width: 60%;">
+        <div class="container" style="width: 60%;"></div>
+        <div class="field">
+            <div class="control">
+                <input class="input is-large has-background-dark" type="text" placeholder="Username, Phone or Email"
+                    id="username">
+            </div>
+            <p id="help-un" class="help">
+            </p>
+        </div>
+
+        <div class="field">
+            <div class="control">
+                <input class="input is-large has-background-dark" type="password" placeholder="Password" id="userpw">
+            </div>
+            <p id="help-password" class="help">
+            </p>
+        </div>
+
+        <div class="field is-hidden" id="c-userpw-c">
+            <div class="control">
+                <input class="input is-large has-background-dark" type="password" placeholder="Confirm Your Password"
+                    id="userpw-c">
+            </div>
+            <p id="help-password2" class="help">
+            </p>
+        </div>
+
+        <button class="button is-light container is-large" id="login">Log in</button>
+        <button class="button is-light container is-large is-hidden" id="signin">Sign In</button>
+
+        <!-- <span>or</span> -->
+        <hr>
+
+        <button class="button is-outline-light container is-large" id="sign_up">Sign Up</button>
+        <button class="button is-ghost is-hidden" id="already">already have acount</button>
+    </section>
+</body>
+
+</html>
